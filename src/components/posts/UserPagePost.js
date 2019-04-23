@@ -7,6 +7,7 @@ import { Container, Row, Col } from 'reactstrap';
 import Popup from "reactjs-popup";
 import AOS from 'aos';
 import { Form, FormGroup, Label, Input, ModalHeader, ModalBody, ModalFooter, Modal} from 'reactstrap';
+import URL from '../../helpers/environment'
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 // ..
 AOS.init();
@@ -103,7 +104,7 @@ class UserPagePost extends React.Component{
     deletepost = () => {
         const accessToken = localStorage.getItem('token');
 
-        fetch(`http://localhost:3008/post/deletepost/${this.props.post.id}`,{
+        fetch(`${URL}/post/deletepost/${this.props.post.id}`,{
                 method: 'DELETE',
                 headers: new Headers({
                         'Content-Type': 'application/json',
@@ -118,7 +119,7 @@ class UserPagePost extends React.Component{
            // });
             
         
-            fetch(`http://localhost:3008/comment/deletepostcomments/${this.props.post.id}`,{
+            fetch(`${URL}/comment/deletepostcomments/${this.props.post.id}`,{
                 method: 'DELETE',
                 headers: new Headers({
                         'Content-Type': 'application/json',
@@ -133,7 +134,7 @@ class UserPagePost extends React.Component{
 
         if(this.state.hasBeenLiked == false){
 
-            fetch(`http://localhost:3008/post/like1up/${this.props.post.id}`,{
+            fetch(`${URL}/post/like1up/${this.props.post.id}`,{
             method: 'PUT',
             headers: new Headers({
                     'Content-Type': 'application/json',
@@ -152,7 +153,7 @@ class UserPagePost extends React.Component{
 
         else{
 
-            fetch(`http://localhost:3008/post/like1down/${this.props.post.id}`,{
+            fetch(`${URL}/post/like1down/${this.props.post.id}`,{
             method: 'PUT',
             headers: new Headers({
                     'Content-Type': 'application/json',
@@ -183,7 +184,7 @@ class UserPagePost extends React.Component{
         const accessToken = localStorage.getItem('token');
 
         if((this.state.link).slice(0,23) == "https://www.youtube.com"){
-        fetch(`http://localhost:3008/post/update/${this.props.post.id}`,{
+        fetch(`${URL}/post/update/${this.props.post.id}`,{
                 method: 'PUT',
                 body: JSON.stringify({post : this.state}),
                 headers: new Headers({

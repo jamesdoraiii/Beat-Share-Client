@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { Form, FormGroup, Label, Input, Button, InputGroup, InputGroupAddon, ListGroup } from 'reactstrap';
 import Comment from './Comment';
 import Radium from 'radium';
+import URL from '../../helpers/environment';
 
 class CommentCreateAndList extends React.Component{
         
@@ -45,7 +46,7 @@ class CommentCreateAndList extends React.Component{
                 const accessToken = localStorage.getItem('token');
                 event.preventDefault();
                 if (this.state.commentcontent !== "" ){
-                        await fetch("http://localhost:3008/comment/create", {
+                        await fetch(`${URL}/comment/create`, {
                         method: 'POST', 
                         body: JSON.stringify({comment:this.state}), 
                         headers: new Headers({
@@ -76,7 +77,7 @@ class CommentCreateAndList extends React.Component{
                 console.log("inside fetch comments")
                 const accessToken = localStorage.getItem('token');
 
-                fetch(`http://localhost:3008/comment/findpostcomments/${this.props.postIdentity}`,{
+                fetch(`${URL}/comment/findpostcomments/${this.props.postIdentity}`,{
                 method: 'GET',
                 headers: new Headers({
                         'Content-Type': 'application/json',

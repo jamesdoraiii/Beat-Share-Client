@@ -2,6 +2,7 @@ import React from 'react';
 import Post from './Post';
 import { Container, Row, Col, Button, ButtonGroup} from 'reactstrap';
 import Radium from 'radium';
+import URL from '../../helpers/environment'
 
 
 
@@ -43,7 +44,7 @@ class TopPostList extends React.Component{
 
                 const accessToken = localStorage.getItem('token');
 
-                fetch(`http://localhost:3008/post/findtopposts${this.state.fetchterm}`,{
+                fetch(`${URL}/post/findtopposts${this.state.fetchterm}`,{
                 method: 'GET',
                 headers: new Headers({
                         'Content-Type': 'application/json',

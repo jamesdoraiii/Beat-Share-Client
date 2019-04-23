@@ -2,6 +2,7 @@ import React from 'react';
 import Comment from './Comment';
 import Radium from 'radium';
 import { Container, Row, Col } from 'reactstrap';
+import URL from '../../helpers/environment';
 
 
 const styles = {
@@ -36,7 +37,7 @@ class CommentList extends React.Component{
 
                 const accessToken = localStorage.getItem('token');
 
-                fetch(`http://localhost:3008/comment/findusercomments`,{
+                fetch(`${URL}/comment/findusercomments`,{
                 method: 'GET',
                 headers: new Headers({
                         'Content-Type': 'application/json',

@@ -3,6 +3,7 @@ import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import Radium from 'radium';
 import { Container, Row, Col } from 'reactstrap';
 import backgroundIMG from '../../assets/pictures/postcreation.jpg';
+import URL from '../../helpers/environment'
 
     
 class PostCreation extends Component {
@@ -86,7 +87,7 @@ class PostCreation extends Component {
         if (this.state.trackname !== "" && this.state.artistname !== "" && this.state.link !== ""){
                     
             if((this.state.link).slice(0,23) == "https://www.youtube.com"){
-                fetch("http://localhost:3008/post/create", {
+                fetch(`${URL}/post/create`, {
                     method: 'POST', 
                     body: JSON.stringify({post:this.state}), 
                     headers: new Headers({

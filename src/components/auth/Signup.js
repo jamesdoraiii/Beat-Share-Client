@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { Form, FormGroup, Label, Input, Button, FormText } from 'reactstrap';
 import Radium from 'radium';
 import { Container, Row, Col } from 'reactstrap';
-import backgroundIMG from '../../assets/pictures/signup.jpg'
+import backgroundIMG from '../../assets/pictures/signup.jpg';
+import URL from '../../helpers/environment'
 
 class Signup extends Component {
     constructor(props) {
@@ -94,7 +95,7 @@ class Signup extends Component {
         this.state.username === '' || this.state.password === '' ? this.setState({message : 'Valid entry required for both username and password before continuing'}): this.setState ({ message : ''})
 
         if (this.state.username !== "" && this.state.password !== ""){
-                fetch("http://localhost:3008/user/createuser", {
+                fetch(`${URL}/user/createuser`, {
                 method: 'POST', //2
                 body: JSON.stringify({user:this.state}), 
                 headers: new Headers({
@@ -115,7 +116,7 @@ class Signup extends Component {
 
         
         if (this.state.username !== "" && this.state.password !== ""){
-            fetch("http://localhost:3008/user/signin", {
+            fetch(`${URL}/user/signin`, {
                 method: 'POST',
                 body: JSON.stringify({user:this.state}),
                 headers: new Headers({

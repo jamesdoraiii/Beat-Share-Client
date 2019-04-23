@@ -2,6 +2,7 @@ import React from 'react';
 import Post from './Post';
 import { Container, Row, Col } from 'reactstrap';
 import Radium from 'radium';
+import URL from '../../helpers/environment'
 
 
 
@@ -26,7 +27,7 @@ class PostList extends React.Component{
 
                 const accessToken = localStorage.getItem('token');
 
-                fetch(`http://localhost:3008/post/${this.props.fetchtype}`,{
+                fetch(`${URL}/post/${this.props.fetchtype}`,{
                 method: 'GET',
                 headers: new Headers({
                         'Content-Type': 'application/json',

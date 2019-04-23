@@ -5,6 +5,7 @@ import Radium from 'radium';
 import {Button} from 'reactstrap';
 import { Container, Row, Col } from 'reactstrap';
 import AOS from 'aos';
+import URL from '../../helpers/environment'
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 // ..
 AOS.init();
@@ -78,7 +79,7 @@ class Post extends React.Component{
 
         if(this.state.hasBeenLiked == false){
 
-            fetch(`http://localhost:3008/post/like1up/${this.props.post.id}`,{
+            fetch(`${URL}/post/like1up/${this.props.post.id}`,{
             method: 'PUT',
             headers: new Headers({
                     'Content-Type': 'application/json',
@@ -97,7 +98,7 @@ class Post extends React.Component{
 
         else{
 
-            fetch(`http://localhost:3008/post/like1down/${this.props.post.id}`,{
+            fetch(`${URL}/post/like1down/${this.props.post.id}`,{
             method: 'PUT',
             headers: new Headers({
                     'Content-Type': 'application/json',

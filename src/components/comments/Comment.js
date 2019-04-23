@@ -2,7 +2,8 @@ import React from 'react';
 import {ListGroupItem, Modal, Col, Row, Container, Button, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
 import Radium from 'radium';
 import Popup from 'reactjs-popup';
-import Post from '../posts/Post'
+import Post from '../posts/Post';
+import URL from '../../helpers/environment'
 
 const styles = {
         fontset: {
@@ -71,7 +72,7 @@ class Comment extends React.Component{
         deletecomment = () => {
                 const accessToken = localStorage.getItem('token');
         
-                fetch(`http://localhost:3008/comment/deletecomment/${this.props.comment.id}`,{
+                fetch(`${URL}/comment/deletecomment/${this.props.comment.id}`,{
                         method: 'DELETE',
                         headers: new Headers({
                                 'Content-Type': 'application/json',
@@ -90,7 +91,7 @@ class Comment extends React.Component{
 
                 const accessToken = localStorage.getItem('token');
 
-                fetch(`http://localhost:3008/post/findspecificpost/${this.props.comment.postidofparent}`,{
+                fetch(`${URL}/post/findspecificpost/${this.props.comment.postidofparent}`,{
                 method: 'GET',
                 headers: new Headers({
                         'Content-Type': 'application/json',

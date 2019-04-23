@@ -8,6 +8,10 @@ switch(window.location.hostname) {
     case 'blue-final-project-client.com' : 
         APIURL = 'https://blue-final-project-database.herokuapp.com';
         break;    
+    
+    default: 
+        APIURL = 'https://blue-final-project-database.herokuapp.com';
+        break;
 }
 
 export default APIURL;

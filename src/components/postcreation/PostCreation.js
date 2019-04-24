@@ -19,25 +19,36 @@ class PostCreation extends Component {
             fullpage:{
                 backgroundImage: `url(${backgroundIMG})`,
                 backgroundRepeat: "no-repeat",
+                backgroundAttachment: "fixed",
                 backgroundSize: "cover",
                 webkitFilter: "grayscale(100%)",
                 filter: "grayscale(100%)",
-                height: "100vh",
-                width: "100vw"
+                height: "65em"
             },
+
             form:{
                 background: 'rgba(255,255,255,0.95)',
                 position: 'relative',
                 margin: 'auto',
                 padding: '4vh',
-                top: '8vh',
-                fontSize: '3vh',
+                top: '3vh',
+                fontSize: '2em',
                 textAlign: 'center',
                 borderRadius: ".5em",
                 boxShadow: ".5em .5em 1em #000000"
             },
+
+            forceSize:{
+                height: '3em',
+                fontSize: '.5',
+                margin: '1vh'
+            },
+
             spacertop: {
-                height: "12vh"
+                height: "6em"
+            },
+            spacer: {
+                height: ".05vh"
             },
             titletext: {
                 color: "white",
@@ -55,18 +66,19 @@ class PostCreation extends Component {
                 border: "0",
                 height: ".3vh",
                 backgroundImage: "linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0))",
-                boxShadow: ".15px .15px #595959",
+                boxShadow: ".1px .1px #595959",
             },
             button: {
-                width: "40%",
-                height: '6vh',
+                width: "30%",
+                height: '3.5em',
                 fontFamily: "'Montserrat', sans-serif",
                 backgroundColor: "black"
                 },
             fontset: {
                 fontFamily: "'Montserrat', sans-serif",
             }
-            
+
+
         }
     }
 

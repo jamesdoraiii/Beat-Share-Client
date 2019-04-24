@@ -34,6 +34,15 @@ const styles = {
         fontSize: "2em",
         textShadow: "1px 1px #595959",
     },
+    subtitletext2: {
+        color: "white",
+        textAlign: "center",
+        fontSize: "2em",
+        textShadow: "1px 1px #595959",
+        backgroundColor: "black",
+        borderRadius: "20em",
+        boxShadow: "1px 1px black"
+    },
     line: {
         border: "0",
         height: ".3vh",
@@ -79,13 +88,13 @@ class  UserPage extends React.Component {
             <Row>
 
             <Col xs="6">
-            <h6 style = {styles.subtitletext}>Posts You Have Made:</h6>
+            <h6 style = {styles.subtitletext2}>Posts You Have Made:</h6>
             <hr style = {styles.line}></hr>
             <UserPagePostList fetchtype = 'finduserposts' deleteoption = 'true' didChange = {this.didChange}/>
             </Col>
             
             <Col xs="6">
-            <h6 style = {styles.subtitletext}>Comments You Have Made: </h6>
+            <h6 style = {styles.subtitletext2}>Comments You Have Made: </h6>
             <hr style = {styles.line}></hr>
             <UserCommentList changedStatus = {this.state.changed}/>
             </Col>

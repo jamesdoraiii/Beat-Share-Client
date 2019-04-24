@@ -25,7 +25,7 @@ const styles = {
         color: "white",
         textAlign: "center",
         fontSize: "4em",
-        textShadow: "1px 1px #595959",
+        textShadow: "1px 1px #595959"
     },
     subtitletext: {
         color: "white",

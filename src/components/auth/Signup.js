@@ -22,7 +22,7 @@ class Signup extends Component {
                 backgroundSize: "cover",
                 webkitFilter: "grayscale(100%)",
                 filter: "grayscale(100%)",
-                height: "110vh"
+                height: "65em"
             },
 
             form:{
@@ -31,15 +31,15 @@ class Signup extends Component {
                 margin: 'auto',
                 padding: '4vh',
                 top: '3vh',
-                fontSize: '3vh',
+                fontSize: '2em',
                 textAlign: 'center',
                 borderRadius: ".5em",
                 boxShadow: ".5em .5em 1em #000000"
             },
 
             forceSize:{
-                height: '4vh',
-                fontSize: '2vh',
+                height: '3em',
+                fontSize: '.5',
                 margin: '1vh'
             },
 
@@ -69,7 +69,7 @@ class Signup extends Component {
             },
             button: {
                 width: "30%",
-                height: '6vh',
+                height: '3em',
                 fontFamily: "'Montserrat', sans-serif",
                 backgroundColor: "black"
                 },
